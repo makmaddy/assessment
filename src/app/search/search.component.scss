@@ -1,0 +1,22 @@
+// search.component.scss
+.search-container {
+    position: relative;
+  
+    .search-input {
+      width: 300px;
+    }
+  
+    .search-results {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      width: 100%;
+    }
+  }
+  
