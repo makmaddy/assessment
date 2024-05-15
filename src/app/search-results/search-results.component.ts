@@ -23,8 +23,8 @@ export class SearchResultsComponent implements OnInit{
   @Input() results: any;
   @Output() selectedItem: EventEmitter<any> = new EventEmitter<any>();
   
-
-  displayedColumns: string[] = ['name']; // Add more columns as needed
+//https://material.angular.io/components/table/overview
+  displayedColumns: string[] = ['id','name','category']; // Add more columns as needed
 
   constructor() { }
 
@@ -35,7 +35,6 @@ export class SearchResultsComponent implements OnInit{
     console.log("items",item);
     
     this.selectedItem=item;
-    this.selectedItem.emit(item);
 
     console.log(this.selectedItem.name);
     
