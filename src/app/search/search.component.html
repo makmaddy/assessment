@@ -1,4 +1,4 @@
-<div style="display: flex;flex-direction: column;">
+<!-- <div style="display: flex;flex-direction: column;">
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Search</mat-label>
@@ -19,4 +19,19 @@
     </mat-form-field>
   </form>
   {{options}}
+</div> -->
+
+
+<div class="search-container">
+  <mat-form-field appearance="fill">
+    <input matInput placeholder="Search" [(ngModel)]="searchText">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="search()">Search</button>
 </div>
+<app-search-results 
+  *ngIf="showResults" 
+  [results]="searchResults"
+  (selectItem)="selectItem($event)">
+</app-search-results>
+
+

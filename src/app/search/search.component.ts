@@ -7,26 +7,64 @@ import {AsyncPipe} from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent {
-  myControl = new FormControl('');
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]> | undefined;
+export class SearchComponent implements OnInit{
+  // myControl = new FormControl('');
+  // options: string[] = ['One', 'Two', 'Three'];
+  // filteredOptions: Observable<string[]> | undefined;
 
-  ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
-    );
+  // ngOnInit() {
+  //   this.filteredOptions = this.myControl.valueChanges.pipe(
+  //     startWith(''),
+  //     map(value => this._filter(value || '')),
+  //   );
+  // }
+
+  // private _filter(value: string): string[] {
+  //   const filterValue = value.toLowerCase();
+
+  //   return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  // }
+
+  // searchText: string = '';
+  // searchResults: any[] = [];
+  // showResults: boolean = false;
+  // selectedItem: any;
+
+  // constructor(private dataService: DataService) { }
+
+  // ngOnInit(): void {
+  // }
+
+  // search() {
+  //   this.showResults = true;
+  //   this.searchResults = this.dataService.search(this.searchText);
+  // }
+
+  // selectItem(item: any) {
+  //   this.selectedItem = item;
+  // }
+  searchText: string = '';
+  searchResults: any[] = [];
+  showResults: boolean = false;
+  selectedItem: any;
+
+  constructor(private dataService: DataService) { }
+
+  ngOnInit(): void {
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+  search() {
+    this.showResults = true;
+    this.searchResults = this.dataService.search(this.searchText);
+  }
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  selectItem(item: any) {
+    this.selectedItem = item;
   }
 }

@@ -11,6 +11,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { MatTableModule } from '@angular/material/table'; // Import MatTableModule
+import { MatChipsModule } from '@angular/material/chips'; // Import MatChipsModule
 
 const routes: Routes = [
   { path: 'header', component: HeaderComponent },
@@ -21,7 +25,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,10 @@ const routes: Routes = [
     MatAutocompleteModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
+    FormsModule, // Add FormsModule here
+    MatTableModule, // Add MatTableModule here
+    MatChipsModule // Add MatChipsModule here
+
   ],
   exports: [RouterModule],
   providers: [
