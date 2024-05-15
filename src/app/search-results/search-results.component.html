@@ -8,7 +8,13 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table> -->
-<table mat-table [dataSource]="results" class="mat-elevation-z8">
+  <div *ngIf="selectedItem" class="selected-item">
+    Selected Item:
+    <mat-chip>{{ selectedItem.name }}</mat-chip>
+    <!-- Add more details if needed -->
+  </div>
+
+<table mat-table [dataSource]="results" class="mat-elevation-z8" style="margin-top: 16px;">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>No.</th>
     <td mat-cell *matCellDef="let result">{{ result.id }}</td>
@@ -32,8 +38,4 @@
   ></tr>
 </table>
 
-<div *ngIf="selectedItem" class="selected-item">
-  Selected Item:
-  <mat-chip>{{ selectedItem.name }}</mat-chip>
-  <!-- Add more details if needed -->
-</div>
+
