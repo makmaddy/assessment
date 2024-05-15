@@ -24,7 +24,7 @@
 
 <div class="search-container">
   <mat-form-field appearance="fill">
-    <input matInput placeholder="Search" [(ngModel)]="searchText">
+    <input matInput placeholder="Search" [(ngModel)]="searchText" placeholder="Search group" (keyup.enter)="search()">
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="search()">Search</button>
 </div>

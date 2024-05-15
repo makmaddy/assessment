@@ -35,6 +35,7 @@ export class SearchResultsComponent implements OnInit{
     console.log("items",item);
     
     this.selectedItem=item;
+    this.selectedItem.emit(item);
 
     console.log(this.selectedItem.name);
     
