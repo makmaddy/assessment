@@ -8,6 +8,8 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table> -->
+
+  <!-- https://material.angular.io/components/chips/overview -->
   <div *ngIf="selectedItem" class="selected-item">
     Selected Item:
     <mat-chip>{{ selectedItem.name }}</mat-chip>
