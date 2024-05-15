@@ -50,9 +50,17 @@ export class SearchComponent implements OnInit{
   //   this.selectedItem = item;
   // }
   searchText: string = '';
+  searchQuestionText: string = '';
+
   searchResults: any[] = [];
+  searchQuestionResults: any[] = [];
+
   showResults: boolean = false;
+  showQuestionResults: boolean = false;
+
   selectedItem: any;
+  selectedItemQuestion: any;
+
 
   constructor(private dataService: DataService) { }
 
@@ -64,7 +72,15 @@ export class SearchComponent implements OnInit{
     this.searchResults = this.dataService.search(this.searchText);
   }
 
+  searchQuestion() {
+    this.showQuestionResults = true;    
+    this.searchQuestionResults = this.dataService.search(this.searchQuestionText);
+  }
+
   selectItem(item: any) {
     this.selectedItem = item;
+  }
+  selectItemQuestion(item: any) {
+    this.selectedItemQuestion = item;
   }
 }

@@ -15,8 +15,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { MatTableModule } from '@angular/material/table'; // Import MatTableModule
 import { MatChipsModule } from '@angular/material/chips';
-import { SearchQuestionComponent } from './search-question/search-question.component';
-import { SearchQuestionResultsComponent } from './search-question-results/search-question-results.component'; // Import MatChipsModule
+import {MatDividerModule} from '@angular/material/divider';
 
 const routes: Routes = [
   { path: 'header', component: HeaderComponent },
@@ -28,9 +27,7 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     SearchComponent,
-    SearchResultsComponent,
-    SearchQuestionComponent,
-    SearchQuestionResultsComponent
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +39,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule, // Add FormsModule here
     MatTableModule, // Add MatTableModule here
-    MatChipsModule // Add MatChipsModule here
-
+    MatChipsModule, // Add MatChipsModule here
+    MatDividerModule
   ],
   exports: [RouterModule],
   providers: [
